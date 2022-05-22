@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>spring websocket chat</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+<div id="chat-container">
+    <div class="chat-header">
+        <div class="user-container">
+            <span id="username" th:utext="${username}">
+
+            </span>
+            <a th:href="@{/logout}">
+                logout
+            </a>
+        </div>
+        <h3>
+            spring websocket chat
+        </h3>
+    </div>
+    <hr/>
+    <div id="connecting">
+        connecting is coming...
+    </div>
+    <ul id="messageArea">
+    </ul>
+    <form id="messageForm" name="messageForm">
+        <div class="input-message">
+            <input type="text" id="message" autocomplete="off"
+                   placeholder="Type a message..."/>
+            <button type="submit">
+                send
+            </button>
+        </div>
+    </form>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
